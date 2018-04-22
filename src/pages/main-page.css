@@ -1,0 +1,18 @@
+.main-page-container {
+    text-align: center;
+  }
+  
+  .main-page-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .main-page-title {
+    font-size: 1.5em;
+  }
+  
+  .main-page-intro {
+    font-size: large;
+  }
