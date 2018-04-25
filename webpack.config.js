@@ -2,13 +2,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./public/index.html",
+  template: "./src/index.html",
   filename: "./index.html",
-  favicon: "./public/favicon.ico"
+  favicon: "./src/images/favicon.ico"
 });
 
 module.exports = {
     entry: './src/index.jsx',
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
     module: {
       rules: [
         {
@@ -21,7 +24,11 @@ module.exports = {
         {
             test: /\.(css|scss)$/,
             use: ["style-loader", "css-loader", "sass-loader"]
-        }
+        },
+        {
+          test: /\.jpg$/,
+          loader: "url-loader?mimetype=image/jpg" 
+       }
       ]
     },
     plugins: [htmlPlugin]

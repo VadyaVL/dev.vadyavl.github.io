@@ -1,0 +1,51 @@
+.home-page-container {
+    min-height: 100vh;
+    position: relative;
+    >.blur-banner {
+        position: absolute;
+        width: 75%;
+        padding: 20px;
+        background: rgba(34, 34, 34, 0.75);
+
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        >.banner-text {
+            >h1 {
+                font: 78px/1.1em 'opensans-bold', sans-serif;
+                margin: 0 auto;
+                color: #fff;
+                text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+            }
+            >h3 {
+                font: 18px/1.9em 'librebaskerville-regular', serif;
+                color: #A8A8A8;
+                margin: 0 auto;
+                width: 70%;
+                text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+                >span, a {
+                    color: white;
+                    text-decoration: none;
+                    outline: 0;
+                }
+            }
+        }
+        >hr {
+            border-width: 1px 0 0;
+            border-color: rgba(150, 150, 150, .5);
+            clear: both;
+        }
+        >.social-icons {
+            >a {
+                margin: 0 10px;
+            }
+        }
+    }
+    >.action-button {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

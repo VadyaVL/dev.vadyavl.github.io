@@ -1,0 +1,29 @@
+nav {
+    font: 12px 'opensans-bold', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+
+    > ul {
+        list-style-type: none;
+        >li {
+            display: inline-block;
+            >a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+                &:hover {
+                    color: yellowgreen;
+                }
+            }
+        }
+        
+    }
+
+}
