@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import HomePage from './home';
-import Menu from './menu';
+import Menu from '../menu';
+import HomePage from '../sections/home';
+import AboutPage from '../sections/about';
 
 import './index.scss';
 
@@ -13,7 +14,7 @@ class MainPage extends Component {
           <HomePage />
         </section>
         <section id="about">
-          <HomePage />
+          <AboutPage />
         </section>
         <section id="resume">
           <HomePage />

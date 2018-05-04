@@ -5,6 +5,7 @@ import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { white } from 'material-ui/styles/colors';
 import backgroundImage from '../../../images/header-background.jpg'
+import { connect } from 'react-redux'
 
 import './index.scss';
 
@@ -22,11 +23,8 @@ class HomePage extends Component {
       <div className="home-page-container" style={rootStyle}>
         <div className="blur-banner">
           <div className="banner-text">
-            <h1 className="responsive-headline">I'm Vadym Lytvyn.</h1>
-            <h3>I want to start a career in IT with the ability to demonstrate their knowledge and gain new ones.
-                I love programming (<span>C#</span>, <span>java</span>). Like to solve interesting problems. I love to read books on programming.
-                Let's <a href="#about">start scrolling</a> and learn more <a href="#about">about me</a>.
-            </h3>
+            <h1 className="responsive-headline">{this.props.homeTitle}</h1>
+            <h3>{this.props.homeText}</h3>
           </div>
           <hr />
           <div className="social-icons">
@@ -48,7 +46,8 @@ class HomePage extends Component {
                 width: 60,
                 height: 60,
                 color: white
-              }}>
+              }}
+              href='#about'>
               <ExpandMore />
             </IconButton>
           </MuiThemeProvider>  
@@ -58,4 +57,20 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+const mapStateToProps = (state) => {
+  return {
+    homeTitle: state.portfolio.homeTitle,
+    homeText: state.portfolio.homeText
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    
+  }
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePage);

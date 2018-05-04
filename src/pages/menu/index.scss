@@ -7,6 +7,7 @@ nav {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
+    min-width: 80%;
 
     > ul {
         list-style-type: none;
