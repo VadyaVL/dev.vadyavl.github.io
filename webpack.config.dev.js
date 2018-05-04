@@ -1,5 +1,7 @@
+'use strict';
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -7,8 +9,16 @@ const htmlPlugin = new HtmlWebPackPlugin({
   favicon: "./src/images/favicon.ico"
 });
 
+const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
+
 module.exports = {
-    entry: './src/index.jsx',
+    mode: 'development',
+    entry: [
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://0.0.0.0:3000',  // WebpackDevServer host and port
+      'webpack/hot/only-dev-server',                      // "only" prevents reload on syntax errors
+      './src/index.jsx'
+    ],
     resolve: {
       extensions: ['.js', '.jsx']
     },
@@ -31,5 +41,5 @@ module.exports = {
        }
       ]
     },
-    plugins: [htmlPlugin]
+    plugins: [htmlPlugin, hotModuleReplacementPlugin]
   }
