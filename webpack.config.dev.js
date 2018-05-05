@@ -1,6 +1,7 @@
 'use strict';
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -10,6 +11,8 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
+
+const bundleAnalyzerPlugin = new BundleAnalyzerPlugin();
 
 module.exports = {
     mode: 'development',
@@ -41,5 +44,5 @@ module.exports = {
        }
       ]
     },
-    plugins: [htmlPlugin, hotModuleReplacementPlugin]
+    plugins: [htmlPlugin, hotModuleReplacementPlugin/*, bundleAnalyzerPlugin*/]
   }
