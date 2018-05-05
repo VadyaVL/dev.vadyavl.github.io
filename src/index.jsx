@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
@@ -14,7 +14,7 @@ const store = createStore(combineReducers({
     portfolio,
 }));
 
-ReactDOM.render(
+render(
     <Provider store={store}>
         <MuiThemeProvider>
             <MainPage />

@@ -4,16 +4,6 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html",
-  favicon: "./src/images/favicon.ico"
-});
-
-const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
-
-const bundleAnalyzerPlugin = new BundleAnalyzerPlugin();
-
 module.exports = {
     mode: 'development',
     entry: [
@@ -44,5 +34,13 @@ module.exports = {
        }
       ]
     },
-    plugins: [htmlPlugin, hotModuleReplacementPlugin/*, bundleAnalyzerPlugin*/]
+    plugins: [
+      new HtmlWebPackPlugin({
+        template: "./src/index.html",
+        filename: "./index.html",
+        favicon: "./src/images/favicon.ico"
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+      new BundleAnalyzerPlugin()
+    ]
   }
