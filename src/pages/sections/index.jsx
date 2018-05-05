@@ -1,7 +1,7 @@
 import HomePage from './home';
 import AboutPage from './about';
 
-export default {
+export {
     HomePage,
     AboutPage
 };

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { SocialIcon } from 'react-social-icons';
 import IconButton from 'material-ui/IconButton';
 import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { white } from 'material-ui/styles/colors';
-import backgroundImage from '../../../images/header-background.jpg'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+
+import backgroundImage from '../../../images/header-background.jpg';
 
 import './index.scss';
 
@@ -35,22 +35,20 @@ class HomePage extends Component {
           </div>
         </div>
         <div className="action-button">
-          <MuiThemeProvider>
-            <IconButton
-              style={{
-                width: 120,
-                height: 120,
-                padding: 30,
-              }}
-              iconStyle={{
-                width: 60,
-                height: 60,
-                color: white
-              }}
-              href='#about'>
-              <ExpandMore />
-            </IconButton>
-          </MuiThemeProvider>  
+          <IconButton
+            style={{
+              width: 120,
+              height: 120,
+              padding: 30,
+            }}
+            iconStyle={{
+              width: 60,
+              height: 60,
+              color: white
+            }}
+            href='#about'>
+            <ExpandMore />
+          </IconButton>
         </div>
       </div>
     );

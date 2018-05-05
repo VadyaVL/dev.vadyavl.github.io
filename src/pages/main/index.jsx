@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+
 import Menu from '../menu';
-import HomePage from '../sections/home';
-import AboutPage from '../sections/about';
+import { HomePage, AboutPage}  from '../sections';
 
 import './index.scss';
 

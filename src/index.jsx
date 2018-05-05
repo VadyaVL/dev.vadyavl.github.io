@@ -4,6 +4,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { portfolio } from './reducers'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import MainPage from './pages/main';
 
@@ -15,7 +16,9 @@ const store = createStore(combineReducers({
 
 ReactDOM.render(
     <Provider store={store}>
-        <MainPage />
+        <MuiThemeProvider>
+            <MainPage />
+        </MuiThemeProvider>
     </Provider>, 
     document.getElementById('root'));
 registerServiceWorker();
