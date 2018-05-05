@@ -5,7 +5,7 @@ import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import { white } from 'material-ui/styles/colors';
 import { connect } from 'react-redux';
 
-import backgroundImage from '../../../images/header-background.jpg';
+import backgroundImage from '../../../images/header-background-min.jpg';
 
 import './index.scss';
 
