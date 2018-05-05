@@ -3,6 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ClosureCompilerPlugin = require('webpack-closure-compiler');
 const CompressionPlugin = require("compression-webpack-plugin");
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -27,8 +28,21 @@ const compressionPlugin = new CompressionPlugin({
   test: /\.js/,
   cache: true,
   algorithm: 'gzip',
-  minRatio: 0.8
+  minRatio: 0.8,
+  deleteOriginalAssets: true
 });
+
+const imageminPlugin = new ImageminPlugin({
+  test: /\.(jpe?g|png|gif|svg)$/i,
+  maxFileSize: 244*1024, // 244 kB  // not work.. redo
+ });
+
+// Change it
+/*      match: /main.js/g,
+        replacement: function (match) {
+          return 'main.js.gz';
+        }
+ */
 
 module.exports = {
     mode: 'production',
@@ -61,5 +75,5 @@ module.exports = {
         }
       ]
     },
-    plugins: [htmlPlugin, uglifyJsPlugin, minifyPlugin/*, compressionPlugin*/]
+    plugins: [htmlPlugin, uglifyJsPlugin, minifyPlugin, compressionPlugin, imageminPlugin]
   }
