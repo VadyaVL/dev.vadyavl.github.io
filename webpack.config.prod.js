@@ -4,6 +4,7 @@ const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ClosureCompilerPlugin = require('webpack-closure-compiler');
 const CompressionPlugin = require("compression-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -37,12 +38,15 @@ const imageminPlugin = new ImageminPlugin({
   maxFileSize: 244*1024, // 244 kB  // not work.. redo
  });
 
-// Change it
-/*      match: /main.js/g,
-        replacement: function (match) {
-          return 'main.js.gz';
-        }
- */
+// Make it more universal
+const replaceInFileWebpackPlugin = new ReplaceInFileWebpackPlugin([
+  {
+    test: /\.html$/,
+    rules: [{
+      search: 'main.js',
+      replace: 'main.js.gz'
+    }]
+}]);
 
 module.exports = {
     mode: 'production',
@@ -75,5 +79,5 @@ module.exports = {
         }
       ]
     },
-    plugins: [htmlPlugin, uglifyJsPlugin, minifyPlugin, compressionPlugin, imageminPlugin]
+    plugins: [htmlPlugin, uglifyJsPlugin, minifyPlugin, compressionPlugin, imageminPlugin, replaceInFileWebpackPlugin]
   }
