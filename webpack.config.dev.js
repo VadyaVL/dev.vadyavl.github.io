@@ -9,14 +9,18 @@ module.exports = {
     entry: [
       'react-hot-loader/patch',
       'webpack-dev-server/client?http://0.0.0.0:3000',  // WebpackDevServer host and port
-      'webpack/hot/only-dev-server',                      // "only" prevents reload on syntax errors
-      './src/index.jsx'
+      'webpack/hot/only-dev-server',                    // "only" prevents reload on syntax errors
+      './src/index.tsx'
     ],
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
     module: {
       rules: [
+        { 
+          test: /\.tsx?$/,
+          loader: "awesome-typescript-loader"
+        },
         {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
@@ -31,7 +35,7 @@ module.exports = {
         {
           test: /\.jpg$/,
           loader: "url-loader?mimetype=image/jpg" 
-       }
+        }
       ]
     },
     plugins: [
@@ -41,6 +45,6 @@ module.exports = {
         favicon: "./src/images/favicon.ico"
       }),
       new webpack.HotModuleReplacementPlugin(),
-      new BundleAnalyzerPlugin()
+      /* new BundleAnalyzerPlugin() */
     ]
   }

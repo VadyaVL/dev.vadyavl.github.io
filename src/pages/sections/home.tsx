@@ -1,26 +1,35 @@
-import React, { Component } from 'react';
+import * as React from "react";
 import { SocialIcon } from 'react-social-icons';
 import IconButton from 'material-ui/IconButton';
 import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import { white } from 'material-ui/styles/colors';
 import { connect } from 'react-redux';
 
-import backgroundImage from '../../../images/header-background-min.jpg';
+import * as backgroundImage from '../../images/header-background-min.jpg';
 
-import './index.scss';
+import './home.scss';
 
-class HomePage extends Component {
-  render() {
+interface ReduxProps { 
+  homeTitle: string; 
+  homeText: string;
+}
 
-    const rootStyle = {
-      backgroundImage: `url(${backgroundImage})`,
-      backgroundRepeat  : 'no-repeat',
-      backgroundPosition: 'top center',
-      backgroundSize: 'cover',
-    };
+interface Props extends ReduxProps { 
+  
+}
 
+class HomePage extends React.Component<Props> {
+  
+  private backgroundStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundRepeat  : 'no-repeat',
+    backgroundPosition: 'top center',
+    backgroundSize: 'cover',
+  };
+
+  public render(): JSX.Element {
     return (
-      <div className="home-page-container" style={rootStyle}>
+      <div className='home-page-container' style={this.backgroundStyle}>
         <div className="blur-banner">
           <div className="banner-text">
             <h1 className="responsive-headline">{this.props.homeTitle}</h1>
@@ -55,20 +64,17 @@ class HomePage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state): ReduxProps => {
   return {
     homeTitle: state.portfolio.homeTitle,
     homeText: state.portfolio.homeText
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (/*dispatch*/) => {
   return {
     
   }
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

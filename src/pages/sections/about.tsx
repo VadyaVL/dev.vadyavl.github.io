@@ -1,45 +1,29 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FileDownload from 'material-ui/svg-icons/file/file-download';
-import FontIcon from 'material-ui/FontIcon';
 import Avatar from 'material-ui/Avatar';
 
-import profile from '../../../images/profile-min.jpg';
+import * as profile from '../../images/profile-min.jpg';
 
-import './index.scss';
+import './about.scss';
 
-const styles = {
-  button: {
-    marginTop: 20,
-  },
-  exampleImageInput: {
-    cursor: 'pointer',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    width: '100%',
-    opacity: 0,
-  },
-};
+interface Props { 
+  
+}
 
-const styleAvatar = {margin: 5};
-
-class AboutPage extends Component {
-  render() {
+class AboutPage extends React.Component<Props> {
+  public render(): JSX.Element {
     return (
       <div className="about-page-container">
         <div className="left-area">
         <Avatar
           src={profile}
           size={114}
-          style={styleAvatar} />
+          style={{ margin: 5 }} />
         </div>
         <div className="right-area">
           <h2>About me</h2>
           <p>Since childhood, fond of mathematics and physics. I brought pleasure to solve interesting tasks. 2012 entered the University. There I became interested in programming. Over the years at University I gained basic knowledge of IT. Currently, the main activity - programming. To improve their knowledge, I read books on programming. With the last-read book "Code complete" (Steve McConnell) and "Java: The Complete Reference" (Herbert Schildt). Now I want to find a job that will allow me to prove my knowledge of programming, and get new ones. I also want to improve the level of English. I would like to work as a web designer or developer of 3D applications.</p>
-
           <div>
             <div>
               <h2>Contact Details</h2>
@@ -60,12 +44,11 @@ class AboutPage extends Component {
                 target="_blank"
                 label="Resume"
                 primary={true}
-                style={styles.button}
+                style={{ marginTop: 20 }}
                 icon={<FileDownload />}
               />
             </div>
           </div>
-
         </div>
       </div>
     );
