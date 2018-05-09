@@ -1,17 +1,35 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
+        "target": "es6",
+        "module": "commonjs",
         "declaration": false,
         "noImplicitAny": false,
+        "removeComments": true,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "allowJs": true,
+        "outDir": "./dist/",
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "removeComments": true,
-        "module": "commonjs",
-        "target": "es6",
-        "jsx": "react",
-        "allowJs": true,
     },
+    "rules": {
+      "no-console": [true, "log"]
+    },
+    "compileOnSave": false,
     "include": [
         "./src/**/*"
-    ]
+    ],
+    "filesGlob": [
+        "./src/**/*.tsx",
+        "./src/**/*.ts",
+        "./typings/tsd.d.ts",
+        "!./node_modules/**/*"
+    ],
+    "atom": {
+        "rewriteTsconfig": false
+    }
 }
