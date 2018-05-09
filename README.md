@@ -1,7 +1,7 @@
 **vadyavl.github.io** - portfolio.
 
 Development Tools:
-* NodeJS;
-* ReactJS;
-* Redux, Saga;
-* other...
+* TypeScript;
+* NodeJS, ReactJS;
+* Webpack;
+* Redux, other...
