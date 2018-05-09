@@ -5,3 +5,5 @@ Development Tools:
 * NodeJS, ReactJS;
 * Webpack;
 * Redux, other...
+
+[Follow the link to view.](https://vadyavl.github.io)
