@@ -8,10 +8,14 @@ module.exports = {
     mode: 'production',
     entry: './src/index.jsx',
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
     module: {
       rules: [
+        { 
+          test: /\.tsx?$/,
+          loader: "awesome-typescript-loader"
+        },
         {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,

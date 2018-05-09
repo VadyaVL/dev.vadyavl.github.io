@@ -4,9 +4,9 @@ import FileDownload from 'material-ui/svg-icons/file/file-download';
 import FontIcon from 'material-ui/FontIcon';
 import Avatar from 'material-ui/Avatar';
 
-import profile from '../../../images/profile-min.jpg';
+import profile from '../../images/profile-min.jpg';
 
-import './index.scss';
+import './about.scss';
 
 const styles = {
   button: {
