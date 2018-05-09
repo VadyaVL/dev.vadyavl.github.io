@@ -3,6 +3,8 @@
         "outDir": "./dist/",
         "declaration": false,
         "noImplicitAny": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "removeComments": true,
         "module": "commonjs",
         "target": "es6",
