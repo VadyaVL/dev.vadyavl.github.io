@@ -1,7 +1,7 @@
-import HomePage from './home';
 import AboutPage from './about';
+import HomePage from './home';
 
 export {
-    HomePage,
-    AboutPage
+	HomePage,
+	AboutPage,
 };
