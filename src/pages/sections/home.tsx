@@ -14,11 +14,7 @@ interface ReduxProps {
   homeText: string;
 }
 
-interface Props extends ReduxProps { 
-  
-}
-
-class HomePage extends React.Component<Props> {
+class HomePage extends React.Component<ReduxProps> {
   
   private backgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
@@ -72,9 +68,7 @@ const mapStateToProps = (state): ReduxProps => {
 };
 
 const mapDispatchToProps = (/*dispatch*/) => {
-  return {
-    
-  }
+  return { }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
