@@ -13,7 +13,11 @@ module.exports = {
       './src/index.tsx'
     ],
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx']
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      alias: {
+        "react": "preact-compat",
+        "react-dom": "preact-compat"
+      }
     },
     module: {
       rules: [
@@ -45,6 +49,6 @@ module.exports = {
         favicon: "./src/images/favicon.ico"
       }),
       new webpack.HotModuleReplacementPlugin(),
-      /* new BundleAnalyzerPlugin() */
+      // new BundleAnalyzerPlugin()
     ]
   }

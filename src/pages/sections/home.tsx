@@ -1,4 +1,5 @@
-import { IconButton } from 'material-ui';
+// tslint:disable-next-line:no-submodule-imports
+import IconButton from 'material-ui/IconButton';
 // tslint:disable-next-line:no-submodule-imports
 import { white } from 'material-ui/styles/colors';
 // tslint:disable-next-line:no-submodule-imports
