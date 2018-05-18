@@ -1,4 +1,7 @@
-import { Avatar, RaisedButton } from 'material-ui';
+// tslint:disable-next-line:no-submodule-imports
+import Avatar from 'material-ui/Avatar';
+// tslint:disable-next-line:no-submodule-imports
+import RaisedButton from 'material-ui/RaisedButton';
 // tslint:disable-next-line:no-submodule-imports
 import FileDownload from 'material-ui/svg-icons/file/file-download';
 import * as React from 'react';

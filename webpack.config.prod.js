@@ -2,13 +2,18 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 
 module.exports = {
     mode: 'production',
     entry: './src/index.tsx',
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx']
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      alias: {
+        "react": "preact-compat",
+        "react-dom": "preact-compat"
+      }
     },
     module: {
       rules: [
@@ -50,5 +55,7 @@ module.exports = {
       new ImageminPlugin({
         test: /\.(jpe?g|png|gif|svg)$/i,
         maxFileSize: 244*1024, // 244 kB  // not work.. redo
-      })]
+      }),
+      new BundleAnalyzerPlugin()
+    ]
   }
