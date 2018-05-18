@@ -3,6 +3,12 @@ import { PortfolioTexts } from '../consts';
 const INITIAL_STATE = {
   homeTitle: 'I\'m Vadym Lytvyn',
   homeText: 'I want to start a career in IT with the ability to demonstrate their knowledge and gain new ones. I love programming (C#, java). Like to solve interesting problems. I love to read books on programming. Let\'s start scrolling and learn more about me.',
+  socialLinks: [
+    'https://www.linkedin.com/in/vadym-lytvyn/',
+    'https://plus.google.com/u/0/+VadimLytvin',
+    'https://vk.com/lytvin',
+    'https://github.com/VadyaVL',
+  ],
 };
 
 export default function (
