@@ -2,6 +2,7 @@
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const webpack = require("webpack");
 
 module.exports = {
@@ -49,6 +50,17 @@ module.exports = {
         favicon: "./src/images/favicon.ico"
       }),
       new webpack.HotModuleReplacementPlugin(),
+      new WebpackPwaManifest({
+        name: 'Vadym Lytvyn Site',
+        short_name: 'VadyaVL',
+        description: 'My awesome Progressive Web App!',
+        background_color: '#ffffff',
+        display: "standalone",
+        theme_color: "#000000",
+        background_color: "#ff0000",
+        inject: true
+      }),
+
       // new BundleAnalyzerPlugin()
     ]
   }

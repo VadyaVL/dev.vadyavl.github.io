@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 
@@ -56,6 +57,16 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         maxFileSize: 244*1024, // 244 kB  // not work.. redo
       }),
-      new BundleAnalyzerPlugin()
+      new WebpackPwaManifest({
+        name: 'Vadym Lytvyn Site',
+        short_name: 'VadyaVL',
+        description: 'My awesome Progressive Web App!',
+        background_color: '#ffffff',
+        display: "standalone",
+        theme_color: "#000000",
+        background_color: "#ff0000",
+        inject: true
+      }),
+      // new BundleAnalyzerPlugin()
     ]
   }
