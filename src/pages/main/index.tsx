@@ -2,7 +2,7 @@ import * as React from 'react';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
 import Menu from '../menu';
-import { AboutPage, HomePage } from '../sections';
+import { AboutPage, HomePage, ResumePage } from '../sections';
 
 import './index.scss';
 
@@ -26,7 +26,7 @@ class MainPage extends React.Component {
 					<AboutPage />
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'resume'}>
-					<HomePage />
+					<ResumePage />
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'work'}>
 					<HomePage />

@@ -1,0 +1,48 @@
+.resume-item {
+  font-family: sans-serif;
+  > .name {
+    float: left;
+    width: 25%;
+    text-align: center;
+    > span {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 3px solid #11ABB0;
+      padding-bottom: 6px;
+      font-weight: 600;
+    }
+  }
+  > .item-body {
+    float: right;
+    width: 75%;
+    > div {
+      > .title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #11ABB0;
+        transition: color .3s ease-in-out;
+        &:hover {
+          color: black;
+          transition: color .3s ease-in-out;
+        }
+      }
+      > .sub-content, .content {
+        > p {
+          font-family: serif;
+          font-size: 16px;
+          line-height: 30px;
+          color: #6E7881;
+          > span {
+            &:first-child {
+              font-style: italic;
+              &::after {
+                content: ' • ';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
