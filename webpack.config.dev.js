@@ -14,11 +14,12 @@ module.exports = {
       './src/index.tsx'
     ],
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      alias: {
-        "react": "preact-compat",
-        "react-dom": "preact-compat"
-      }
+      extensions: ['.ts', '.tsx', '.js', '.jsx']
+      // Ecomy, but not work in production. Maybe minimizators create conflict with h().
+      // alias: {
+      //  "react": "preact-compat",
+      //  "react-dom": "preact-compat"
+      // }
     },
     module: {
       rules: [
