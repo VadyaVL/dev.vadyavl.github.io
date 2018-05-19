@@ -3,6 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 
@@ -32,7 +33,7 @@ module.exports = {
         },
         {
             test: /\.(css|scss)$/,
-            use: ["style-loader", "css-loader", "sass-loader"]
+            use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
         },
         {
           test: /\.(png|jp(e*)g|svg)$/,  
@@ -68,6 +69,13 @@ module.exports = {
         background_color: "#ff0000",
         inject: true
       }),
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: "[name].css",
+        chunkFilename: "[id].css",
+        inject: true,
+      })
       // new BundleAnalyzerPlugin()
     ]
   }
