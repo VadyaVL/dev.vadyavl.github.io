@@ -1,11 +1,10 @@
-// tslint:disable-next-line:no-submodule-imports
+import autobind from 'autobind-decorator';
 import IconButton from 'material-ui/IconButton';
-// tslint:disable-next-line:no-submodule-imports
 import { white } from 'material-ui/styles/colors';
-// tslint:disable-next-line:no-submodule-imports
 import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { goToAnchor } from 'react-scrollable-anchor';
 
 import * as backgroundImage from '../../images/header-background-min.jpg';
 import { BlurBanner, Social } from '../components';
@@ -50,13 +49,18 @@ class HomePage extends React.Component<ReduxProps> {
 					<IconButton
 						style={this.iconButtonStyle}
 						iconStyle={this.iconStyle}
-						href='#about'
+						onClick={this.onClick}
 					>
 						<ExpandMore />
 					</IconButton>
 				</div>
 			</div>
 		);
+	}
+
+	@autobind
+	private onClick(): void {
+		goToAnchor('about', false);
 	}
 }
 

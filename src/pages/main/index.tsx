@@ -1,7 +1,8 @@
 import * as React from 'react';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 import Menu from '../menu';
-import { AboutPage, HomePage} from '../sections';
+import { AboutPage, HomePage } from '../sections';
 
 import './index.scss';
 
@@ -18,21 +19,21 @@ class MainPage extends React.Component {
 		return (
 			<div className='main-page'>
 				<Menu sectionList={this.sectionList} />
-				<section id='home'>
+				<ScrollableAnchor id={'home'}>
 					<HomePage />
-				</section>
-				<section id='about'>
+				</ScrollableAnchor>
+				<ScrollableAnchor id={'about'}>
 					<AboutPage />
-				</section>
-				<section id='resume'>
+				</ScrollableAnchor>
+				<ScrollableAnchor id={'resume'}>
 					<HomePage />
-				</section>
-				<section id='work'>
+				</ScrollableAnchor>
+				<ScrollableAnchor id={'work'}>
 					<HomePage />
-				</section>
-				<section id='review'>
+				</ScrollableAnchor>
+				<ScrollableAnchor id={'review'}>
 					<HomePage />
-				</section>
+				</ScrollableAnchor>
 			</div>
 		);
 	}

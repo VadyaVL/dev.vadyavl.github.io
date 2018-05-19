@@ -7,12 +7,14 @@
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
     "@types/react-redux": "^6.0.0",
+    "autobind-decorator": "^2.1.0",
     "material-ui": "^0.20.0",
     "preact": "^8.2.9",
     "preact-compat": "^3.18.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
+    "react-scrollable-anchor": "^0.6.1",
     "react-social-icons": "^2.8.1",
     "redux": "^4.0.0"
   },
@@ -21,6 +23,7 @@
     "build": "webpack --mode production --config webpack.config.prod.js"
   },
   "devDependencies": {
+    "@types/autobind-decorator": "^2.1.0",
     "awesome-typescript-loader": "^5.0.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",

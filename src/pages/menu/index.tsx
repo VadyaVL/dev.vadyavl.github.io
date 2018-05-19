@@ -1,18 +1,24 @@
 import * as React from 'react';
 
+import MenuItem from './menu-item';
+
 import './index.scss';
 
-interface Props {
+interface MenuProps {
 	sectionList: any[];
 }
 
-class Menu extends React.Component<Props> {
+class Menu extends React.Component<MenuProps> {
 	public render(): JSX.Element {
 		return (
 		<nav>
 			<ul>
 				{this.props.sectionList.map((section: any, index: number) => (
-					<li key={`menu_${index}`}><a href={`#${section.id}`}>{section.title}</a></li>
+					<MenuItem
+						key={`menu_${index}`}
+						idSection={section.id}
+						titleSection={section.title}
+					/>
 				))}
 			</ul>
 		</nav>

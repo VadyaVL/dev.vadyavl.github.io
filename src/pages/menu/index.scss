@@ -11,20 +11,5 @@ nav {
 
     > ul {
         list-style-type: none;
-        >li {
-            display: inline-block;
-            >a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 16px;
-                text-decoration: none;
-                &:hover {
-                    color: yellowgreen;
-                }
-            }
-        }
-        
     }
-
 }

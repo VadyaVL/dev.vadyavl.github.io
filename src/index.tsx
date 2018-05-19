@@ -1,4 +1,3 @@
-// tslint:disable-next-line:no-submodule-imports
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as React from 'react';
 import { render } from 'react-dom';
