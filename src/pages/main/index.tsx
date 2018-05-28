@@ -3,11 +3,13 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 
 import Menu from '../menu';
 import { AboutPage, HomePage, ResumePage } from '../sections';
+import { DNDTestPage } from '../test-pages';
 
 import './index.scss';
 
 class MainPage extends React.Component {
 	private sectionList: any[] = [
+		{ id: 'dnd-test', title: 'DND-Test' },
 		{ id: 'home', title: 'Home' },
 		{ id: 'about', title: 'About & Contact' },
 		{ id: 'resume', title: 'Resume' },
@@ -19,6 +21,9 @@ class MainPage extends React.Component {
 		return (
 			<div className='main-page'>
 				<Menu sectionList={this.sectionList} />
+				<ScrollableAnchor id={'dnd-test'}>
+					<DNDTestPage />
+				</ScrollableAnchor>
 				<ScrollableAnchor id={'home'}>
 					<HomePage />
 				</ScrollableAnchor>
