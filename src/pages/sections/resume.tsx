@@ -9,12 +9,20 @@ interface ReduxProps {
 	resumeContent: any[];
 }
 
-class ResumePage extends React.Component<ReduxProps> {
+interface Props extends ReduxProps {
+	className?: string;
+}
+
+class ResumePage extends React.Component<Props> {
+	public static defaultProps: Partial<Props> = {
+		className: '',
+	};
+
 	public render(): JSX.Element {
 		const { resumeContent } = this.props;
 
 		return (
-			<div className='resume-page-container'>
+			<div className={`resume-page-container ${this.props.className}`}>
 				{
 					resumeContent ?
 					resumeContent.map((item: any, index: number): JSX.Element => {

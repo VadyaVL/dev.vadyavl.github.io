@@ -20,19 +20,19 @@ class MainPage extends React.Component {
 			<div className='main-page'>
 				<Menu sectionList={this.sectionList} />
 				<ScrollableAnchor id={'home'}>
-					<HomePage />
+					<HomePage className='page'/>
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'about'}>
-					<AboutPage />
+					<AboutPage className='page' />
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'resume'}>
-					<ResumePage />
+					<ResumePage className='page' />
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'work'}>
-					<HomePage />
+					<HomePage className='page' />
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'review'}>
-					<HomePage />
+					<HomePage className='page' />
 				</ScrollableAnchor>
 			</div>
 		);

@@ -7,22 +7,28 @@ import * as profile from '../../images/profile-min.jpg';
 
 import './about.scss';
 
-class AboutPage extends React.Component {
+interface Props {
+	className?: string;
+}
+
+class AboutPage extends React.Component<Props> {
+	public static defaultProps: Partial<Props> = {
+		className: '',
+	};
+
 	public render(): JSX.Element {
 		return (
-			<div className='about-page-container'>
-				<div className='left-area'>
+			<div className={`about-page-container ${this.props.className}`}>
 				<Avatar
 					src={profile}
 					size={114}
 					style={{ margin: 5 }}
 				/>
-				</div>
-				<div className='right-area'>
+				<div className='information'>
 					<h2>About me</h2>
 					{/* tslint:disable-next-line:max-line-length */}
 					<p>Since childhood, fond of mathematics and physics. I brought pleasure to solve interesting tasks. 2012 entered the University. There I became interested in programming. Over the years at University I gained basic knowledge of IT. Currently, the main activity - programming. To improve their knowledge, I read books on programming. With the last-read book "Code complete" (Steve McConnell) and "Java: The Complete Reference" (Herbert Schildt). Now I want to find a job that will allow me to prove my knowledge of programming, and get new ones. I also want to improve the level of English. I would like to work as a web designer or developer of 3D applications.</p>
-					<div>
+					<div className='bottom-part'>
 						<div>
 							<h2>Contact Details</h2>
 							<p>

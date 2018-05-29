@@ -1,10 +1,9 @@
 .home-page-container {
-    min-height: 100vh;
-    position: relative;
-    >.action-button {
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  position: relative;
+  >.action-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

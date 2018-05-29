@@ -17,7 +17,15 @@ interface ReduxProps {
 	socialLinks: string[];
 }
 
-class HomePage extends React.Component<ReduxProps> {
+interface Props extends ReduxProps {
+	className?: string;
+}
+
+class HomePage extends React.Component<Props> {
+	public static defaultProps: Partial<Props> = {
+		className: '',
+	};
+
 	private backgroundStyle: React.CSSProperties = {
 		backgroundImage: `url(${backgroundImage})`,
 		backgroundPosition: 'top center',
@@ -39,7 +47,10 @@ class HomePage extends React.Component<ReduxProps> {
 		const { homeTitle, homeText, socialLinks } = this.props;
 
 		return (
-			<div className='home-page-container' style={this.backgroundStyle}>
+			<div
+				className={`home-page-container ${this.props.className}`}
+				style={this.backgroundStyle}
+			>
 				<BlurBanner
 					title={homeTitle}
 					text={homeText}
@@ -51,7 +62,7 @@ class HomePage extends React.Component<ReduxProps> {
 						iconStyle={this.iconStyle}
 						onClick={this.onClick}
 					>
-						<ExpandMore />
+						<ExpandMore hoverColor='#11ABB0' />
 					</IconButton>
 				</div>
 			</div>
