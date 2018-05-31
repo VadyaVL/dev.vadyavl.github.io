@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/autobind-decorator": "^2.1.0",
+    "@types/react-dnd": "^2.0.36",
     "awesome-typescript-loader": "^5.0.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
